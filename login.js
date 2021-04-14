@@ -49,12 +49,16 @@ function submitForm(e){
   var email=signupForm['email'].value;
   // Save message
   saveMessage(name, email, password);
-  setTimeout(albar,1000);}
+  setTimeout(function() {
+    albar(email,password);
+},1000);}
 }
-function albar(){
-  alert("loged in successfully"); 
-
+function albar(email,password){
+  auth.signInWithEmailAndPassword(email, password).then((cred) => {
+    alert("loged in successfully"); 
+    
   window.location.replace("home.html");
+})
   
  // document.getElementById('signupForm').reset();
 }

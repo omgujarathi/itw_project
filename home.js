@@ -72,14 +72,15 @@ function authCheck(){
         document.getElementById('loginNameh').style.display = "none"; 
         document.getElementById('loginNamehhh').innerHTML='LOGOUT';
         console.log(user.uid, user.email);
+        document.getElementById('signinas').innerHTML="loged in with:-";
+        document.getElementById('signinemail').innerHTML=user.email;
         var docRef = db.collection("users").doc(user.uid);
         docRef.get().then((doc) =>{
             if (doc.exists) {
                 console.log("Document data:", doc.data().name);
                 document.getElementById('userNmae').innerHTML=doc.data().name;
                 document.getElementById('userhello').innerHTML="Hello";
-                document.getElementById('signinas').innerHTML="loged in with:-";
-                document.getElementById('signinemail').innerHTML=user.email;
+                
             } else {
                 // doc.data() will be undefined in this case
                 console.log("No such document!");
@@ -96,6 +97,8 @@ function authCheck(){
   document.getElementById('loginNamehhh').style.display = "none"; 
   document.getElementById('userNmae').innerHTML="register or login";
   document.getElementById('userhello').innerHTML="please ";
+  document.getElementById('signinas').innerHTML="";
+        document.getElementById('signinemail').innerHTML="";
     }
 })}
 function llogout(){

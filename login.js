@@ -56,7 +56,7 @@ function albar(){
 
   window.location.replace("home.html");
   
-  document.getElementById('signupForm').reset();
+ // document.getElementById('signupForm').reset();
 }
 
 // Function to get get form values
@@ -67,7 +67,7 @@ function getInputVal(id){
 // Save message to firebase
 function saveMessage(name, email, password){
     auth.createUserWithEmailAndPassword(email, password).then((cred) => {
-      return db.collection('users').doc(cred.user.uid).set({
+      return db.collection("users").doc(cred.user.uid).set({
         name: name
       });
     })

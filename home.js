@@ -105,4 +105,5 @@ function llogout(){
     auth.signOut();
     authCheck();
     alert("loged out successfully");
+    window.location.reload();
 }

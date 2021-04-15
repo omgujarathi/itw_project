@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    transition: 1s ease-in-out;
+    font-weight: 1000;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+header {
+    text-align: center;
+    word-spacing: 60px;
+    padding-top: 25px;
+}
+
+li:hover {
+    text-decoration: underline overline;
+    transform: rotate(360deg);
+}
+
+a:hover {
+    color: antiquewhite;
+    animation: zoom 2s linear;
+}
+
+body {
+    background-color: #102027;
+    
+}
+
+.welcome {
+    color: white;
+    float: left;
+    width: 20px;
+    height: 200px;
+    margin-top: 170px;
+    font-size: 60px;
+    animation: anim 3s ease-in-out;
+    padding-left: 30px;
+}
+
+.content1 {
+    background-image: url(2.png);
+    height: 650px;
+    background-repeat: no-repeat;
+    margin-left: 700px;
+    animation: up 1s linear, 
+               down 1s 1s linear;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+@keyframes zoom {
+    50% {
+      font-size: 30px;  
+    }
+    
+    75% {
+      font-size: 30px;  
+    }
+    
+    100% {
+        font-size: 20px;
+    }
+}
+
+@keyframes up {
+    from {
+        transform: translateY(1000px);
+    }
+    to {
+        transform: translateY(-50px);
+    }
+}
+
+@keyframes down {
+    from {
+        transform: translateY(-40px);
+    }
+    to {
+        transform: translateY(-0px);
+    }
+}
+
+@keyframes up1 {
+    from {
+        transform: translateY(-0px);
+    }
+    to {
+        transform: translateY(-40px);
+    }
+}
+
+@keyframes anim {
+    from {
+        transform: translateX(-1000px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes anim2 {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(300px);
+    }
+}
+
+.logo {
+    margin: 0;
+    float: left;
+    background-image: url(logo.png);
+    align-content: flex-start;
+    width: 90px;
+    height: 90px;
+    background-size: cover;
+    margin-left: 50px;
+}

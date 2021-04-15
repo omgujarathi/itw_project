@@ -23,7 +23,7 @@ li {
 .empty {
     float: left;
     background-image: linear-gradient(90deg,#606c88,#3f4c6b);
-    height: 140%;
+    height: 180%;
     width: 190px;
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px; 

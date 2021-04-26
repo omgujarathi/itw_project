@@ -74,6 +74,8 @@ function saveMessage(name, email, password){
       return db.collection("users").doc(cred.user.uid).set({
         name: name
       });
-    })
+    }).catch(err => {
+      signupForm.querySelector('.error').innerHTML = err.message;
+    });
 }
 

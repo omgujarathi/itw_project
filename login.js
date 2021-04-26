@@ -1,7 +1,3 @@
-// Reference messages collection
-//var messagesRef = firebase.database.databaseURL().ref('message');
-
-// Listen for form submit
 var tttt=document.getElementById("signupForm").addEventListener('submit', submitForm);
 
 

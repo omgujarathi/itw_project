@@ -1,12 +1,9 @@
-
-
-const cafeList = document.querySelector('.products');
+const cartList = document.querySelector('.products');
 var val;
 var kk;
 var total=0;
 var hhtt=``;
-// create element & render cafe
-function renderCafe(doc,kk){
+function cartItems(doc,kk){
     console.log('k=',kk);
     let html=` <div class="product" data-id=${kk}>
     <div class="product-image">
@@ -32,7 +29,7 @@ function renderCafe(doc,kk){
 
 
   hhtt=hhtt+html;
-  cafeList.innerHTML=hhtt;
+  cartList.innerHTML=hhtt;
   
 }
 
@@ -87,7 +84,7 @@ function writeUserData(value,k) {
      snapshot.docs.forEach(doc => {
          
         console.log(doc.data.name);
-        renderCafe(doc);
+        cartItems(doc);
      });
  });*/
 
@@ -111,15 +108,15 @@ db.collection('data').where('cart','==', true).orderBy('name').onSnapshot(snapsh
         var rr=document.getElementById("cart-subtotal").innerHTML=total;
     var r1r=document.getElementById("cart-tax").innerHTML=total*5/100;
     var rr1=document.getElementById("cart-total").innerHTML=total+15+(total*5/100);
-            renderCafe(change.doc,change.doc.id);
+            cartItems(change.doc,change.doc.id);
         }
         else if(change.type=='modified'){
             updata();
             console.log('change');
         }
         else if (change.type == 'removed'){
-            let div = cafeList.querySelector('[data-id=' + change.doc.id + ']');
-            cafeList.removeChild (div);
+            let div = cartList.querySelector('[data-id=' + change.doc.id + ']');
+            cartList.removeChild (div);
         }
         
     });

@@ -1,4 +1,4 @@
-const cafeList = document.querySelector('.items');
+const itemList = document.querySelector('.items');
 var hh=``;
 function adddata(doc){
     let html=`<ul class="first1" >
@@ -10,7 +10,7 @@ function adddata(doc){
 
 </ul>`
 hh=hh+html;
-  cafeList.innerHTML=hh;
+  itemList.innerHTML=hh;
 }
 function adddata1(doc){
     let html=`<ul class="first1" >
@@ -22,7 +22,7 @@ function adddata1(doc){
 
 </ul>`
 hh=hh+html;
-  cafeList.innerHTML=hh;
+  itemList.innerHTML=hh;
 }
 function upcart(kk){
     var rr=document.getElementById(kk).innerHTML="go to cart";
@@ -57,8 +57,8 @@ db.collection('data').orderBy('name').onSnapshot(snapshot => {
             setTimeout(myFunct, 1000);
         }
         else if (change.type == 'removed'){
-            let div = cafeList.querySelector('[data-id=' + change.doc.id + ']');
-            cafeList.removeChild (div);
+            let div = itemList.querySelector('[data-id=' + change.doc.id + ']');
+            itemList.removeChild (div);
         }
         
     });
